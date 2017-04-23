@@ -1,14 +1,17 @@
 https://query.wikidata.org/bigdata/namespace/wdq/sparql
-
-
+https://gist.github.com/antoinecourtin/39b313d4b0cdaa1df3b6f2a3ddbfc3a5
+https://tools.wmflabs.org/openrefine-wikidata/fr/api
 
 
 
 "http://maps.google.com/maps/api/geocode/json?sensor=false&address=" + escape(value, "url")
 
 "http://www.purl.org/inha/agorha/002/" + cells['UNIQUE_KEY'].value
-value.match(/.*(\d{2} [a-z]* \d{4}).*/)[0] + value.match(/.*(\d{4}).*/)[0]
+
+
 replace(value,/[\,\;\:\.\?\/\!\=\+\"\'\-\(\)\[\]]/," ")
+
+value.match(/.*(\d{4}).*/)[0]
 
 value.parseJson().results[0].geometry.location.lat
 value.parseJson().results[0].geometry.location.lng
