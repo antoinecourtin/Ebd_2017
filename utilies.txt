@@ -1,3 +1,9 @@
+https://query.wikidata.org/bigdata/namespace/wdq/sparql
+
+
+
+
+
 "http://maps.google.com/maps/api/geocode/json?sensor=false&address=" + escape(value, "url")
 
 "http://www.purl.org/inha/agorha/002/" + cells['UNIQUE_KEY'].value
