@@ -4,16 +4,15 @@ https://tools.wmflabs.org/openrefine-wikidata/fr/api
 
 
 
-"http://maps.google.com/maps/api/geocode/json?sensor=false&address=" + escape(value, "url")
-
 "http://www.purl.org/inha/agorha/002/" + cells['UNIQUE_KEY'].value
 
 
 replace(value,/[\,\;\:\.\?\/\!\=\+\"\'\-\(\)\[\]]/," ")
 
 value.match(/.*(\d{4}).*/)[0]
-
+"http://maps.google.com/maps/api/geocode/json?sensor=false&address=" + escape(value, "url")
 value.parseJson().results[0].geometry.location.lat
 value.parseJson().results[0].geometry.location.lng
+value + ", " + cells['long'].value
 
 http://refine.codefork.com/reconcile/viaf
