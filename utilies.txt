@@ -11,7 +11,8 @@ https://tools.wmflabs.org/openrefine-wikidata/fr/api
 #Quelques exemples de "formule" utiles dans OpenRefine
 
 rajouter une valeur fixe à une table : "test" + ", " + cells['UNIQUE_KEY'].value
-exemple pour faire un rechercher/remplacer : value.replace('-', 'toto')
+exemple pour faire un rechercher/remplacer : value.replace("[MotRecherché]","[MotLeRemplaçant]")
+"Enlever tout sauf les chiffres" : replace(value,/[[a-z],[A-Z],(é|è|à|ù),\,\;\:\.\?\/\!\=\+\"\'\-\(\)\[\]]/,"")
 extraction d'une date de type aaaa : value.match(/.*(\d{4}).*/)[0]
 extration des parenthèse : value.match(/.*(\(.*\)).*/)[0]
 appeler une API via la fonction Fetching URL: "http://maps.google.com/maps/api/geocode/json?sensor=false&address=" + escape(value, "url")
