@@ -1,18 +1,23 @@
+#URL du SPARLEndpoint de Wikidata pour utiliser Palladio
 https://query.wikidata.org/bigdata/namespace/wdq/sparql
+
+#Exemeple de requête SPARQL pour Wikidata (graveur à l'époque moderne)
 https://gist.github.com/antoinecourtin/39b313d4b0cdaa1df3b6f2a3ddbfc3a5
+
+#Adresse pour paramétrer l'outil de réalignement avec wikidata dans OpenRefine
 https://tools.wmflabs.org/openrefine-wikidata/fr/api
 
+#Quelques exemples de "formule" utiles dans OpenRefine
 
+rajouter une valeur fixe à une table : "test" + ", " + cells['UNIQUE_KEY'].value
+exemple pour faire un rechercher/remplacer : replace(value,/[\,\;\:\.\?\/\!\=\+\"\'\-\(\)\[\]]/," ")
+extraction d'une date de type aaaa : value.match(/.*(\d{4}).*/)[0]
+appeler une API via la fonction Fetching URL: "http://maps.google.com/maps/api/geocode/json?sensor=false&address=" + escape(value, "url")
+extraitre une info dans un json (lattitude) issue d'une requête à une API : value.parseJson().results[0].geometry.location.lat
 
-"http://www.purl.org/inha/agorha/002/" + cells['UNIQUE_KEY'].value
-
-
-replace(value,/[\,\;\:\.\?\/\!\=\+\"\'\-\(\)\[\]]/," ")
-
-value.match(/.*(\d{4}).*/)[0]
-"http://maps.google.com/maps/api/geocode/json?sensor=false&address=" + escape(value, "url")
-value.parseJson().results[0].geometry.location.lat
-value.parseJson().results[0].geometry.location.lng
-value + ", " + cells['long'].value
-
+#Adresses de téléchargement d'OpenRefine et de plugin
+https://github.com/fadmaa/grefine-rdf-extension/releases
 http://refine.codefork.com/reconcile/viaf
+https://www.bits.vib.be/index.php/software-overview/openrefine
+https://github.com/RubenVerborgh/Refine-NER-Extension
+https://github.com/sparkica/refine-stats
