@@ -14,9 +14,18 @@ rajouter une valeur fixe à une table : "test" + ", " + cells['UNIQUE_KEY'].valu
 exemple pour faire un rechercher/remplacer : value.replace("[MotRecherché]","[MotLeRemplaçant]")
 "Enlever tout sauf les chiffres" : replace(value,/[[a-z],[A-Z],(é|è|à|ù),\,\;\:\.\?\/\!\=\+\"\'\-\(\)\[\]]/,"")
 extraction d'une date de type aaaa : value.match(/.*(\d{4}).*/)[0]
+Calculer des longueurs de chaînes : value.length()
+Compter les mots d'une chaîne : value.split(/\b/).length()
+Supprimer les espaces superflus d'une chaîne : value.trim()
+Transformer des caractères spéciaux HTML (ex: &eacute;) : Edit cells > Common transform > Unescape HTML entities
 extration des parenthèse : value.match(/.*(\(.*\)).*/)[0]
 appeler une API via la fonction Fetching URL: "http://maps.google.com/maps/api/geocode/json?sensor=false&address=" + escape(value, "url")
 extraitre une info dans un json (lattitude) issue d'une requête à une API : value.parseJson().results[0].geometry.location.lat
+extraire l'id de wikidata après le réalignement: cell.recon.match.id
+Dans le projet en cours, je souhaite importer la colonne lien_image du projet Base_Adresse ; la colonne qui va servir de pivot  :
+if (value!='null',cell.cross("cathedrales CP_photos_liens_images","Cote/PHOTO,").cells["lien_image"].value[0],'')
+
+
 
 #Adresses de téléchargement d'OpenRefine et de plugin
 https://github.com/fadmaa/grefine-rdf-extension/releases
