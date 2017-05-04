@@ -22,10 +22,11 @@ extration des parenthèse : value.match(/.*(\(.*\)).*/)[0]
 appeler une API via la fonction Fetching URL: "http://maps.google.com/maps/api/geocode/json?sensor=false&address=" + escape(value, "url")
 extraitre une info dans un json (lattitude) issue d'une requête à une API : value.parseJson().results[0].geometry.location.lat
 extraire l'id de wikidata après le réalignement: cell.recon.match.id
-Dans le projet en cours, je souhaite importer la colonne lien_image du projet Base_Adresse ; la colonne qui va servir de pivot  :
-if (value!='null',cell.cross("cathedrales CP_photos_liens_images","Cote/PHOTO,").cells["lien_image"].value[0],'')
+cell.cross("My Address Book", "friend")[0].cells["address"].value
+=> cell.cross("nomduprojet", "nomColonneeCléIntermédiaire")[0].cells["nomColonneArécupérer"].value
 
-
+Adresse du cidoc-crm: http://erlangen-crm.org/170309/
+adresse du FRBR: http://purl.org/vocab/frbr/core
 
 #Adresses de téléchargement d'OpenRefine et de plugin
 https://github.com/fadmaa/grefine-rdf-extension/releases
